@@ -67,6 +67,8 @@ public class PurchaseTokenCall extends ApiCall {
 		tokenParams.put("merchantNotificationUrl", config.getProperty(MERCHANT_NOTIFICATION_URL_PROP_KEY));
 		tokenParams.put("merchantLandingPageUrl", config.getProperty(MERCHANT_LANDING_PAGE_URL_PROP_KEY));
 
+		tokenParams.put("merchantTxId", inputParams.get("merchantTxId"));
+
 		return tokenParams;
 	}
 
