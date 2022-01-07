@@ -57,6 +57,8 @@ public class TokenizeCall extends ApiCall {
 		tokenParams.put("action", getActionType().getCode());
 		tokenParams.put("timestamp", String.valueOf(System.currentTimeMillis()));
 		tokenParams.put("allowOriginUrl", config.getProperty(ALLOW_ORIGIN_URL_PROP_KEY));
+                
+                tokenParams.put("customerId", inputParams.get("customerId"));
 
 		return tokenParams;
 	}
