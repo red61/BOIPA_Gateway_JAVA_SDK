@@ -60,10 +60,9 @@ public class TokenizeCall extends ApiCall {
                 
                 tokenParams.putAll(inputParams); // Pass all inputParams to Session
 
-                // Hack to work around session wanting year as 2 digits and action as 4
-                String expiryYear = tokenParams.get("expiryYear");
-                if(expiryYear.length() == 4) {
-                    tokenParams.put("expiryYear", expiryYear.substring(2,2));
+                // Remmove action params
+                for(String key : Arrays.asList("number", "nameOnCard", "expiryMonth", "expiryYear")) {
+                    tokenParams.remove(key);
                 }
 
 		return tokenParams;
